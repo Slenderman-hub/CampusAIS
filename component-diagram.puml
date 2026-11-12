@@ -1,0 +1,34 @@
+@startuml
+package "Клиентское приложение" {
+    [UI.Desktop]
+    [Core.BusinessLogic]
+    [Data.ApiClient]
+    [Security.Auth]
+    
+    [UI.Desktop] --> [Core.BusinessLogic]
+    [UI.Desktop] --> [Data.ApiClient]
+    [UI.Desktop] --> [Security.Auth]
+    [Core.BusinessLogic] --> [Data.ApiClient]
+}
+
+package "Общие контракты" {
+    [Shared.Contracts]
+}
+
+package "Интеграционный шлюз" {
+    [Gateway.Api]
+    [Gateway.Booking]
+    [Gateway.Security]
+    [Gateway.Sync]
+    [Gateway.Integration]
+    
+    [Gateway.Api] --> [Gateway.Booking]
+    [Gateway.Api] --> [Gateway.Security]
+    [Gateway.Api] --> [Gateway.Sync]
+    [Gateway.Booking] --> [Gateway.Integration]
+    [Gateway.Sync] --> [Gateway.Integration]
+}
+
+[Data.ApiClient] --> [Shared.Contracts]
+[Gateway.Api] --> [Shared.Contracts]
+@enduml

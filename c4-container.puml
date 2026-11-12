@@ -1,0 +1,20 @@
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+Person(user, "Пользователь АИС")
+
+System_Boundary(campusAIS, "АИС Учебный кампус") {
+    Container(client, "Desktop-клиент", "WPF, .NET 8", "Просмотр расписания и бронирование аудиторий")
+    Container(gateway, "Интеграционный шлюз", "ASP.NET Core, .NET 8", "REST API: GET /schedule, POST /rooms/book")
+    ContainerDb(db, "БД шлюза", "PostgreSQL", "Кэш расписания, журнал броней, идемпотентность")
+}
+
+System_Ext(scheduleSystem, "Система расписания", "Учебная часть")
+System_Ext(roomSystem, "Система аудиторного фонда", "Учёт аудиторий")
+
+Rel(user, client, "Работает")
+Rel(client, gateway, "GET /schedule, POST /rooms/book", "HTTPS / JSON")
+Rel(gateway, db, "Читает / пишет", "SQL")
+Rel(gateway, scheduleSystem, "Синхронизация занятий", "HTTPS")
+Rel(gateway, roomSystem, "Бронирование аудиторий", "HTTPS")
+@enduml

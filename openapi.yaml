@@ -1,0 +1,17 @@
+openapi: 3.0.0
+info:
+  title: CampusAIS Gateway API
+  version: 1.0.0
+paths:
+  /schedule:
+    get:
+      summary: Получить расписание
+      responses:
+        '200':
+          description: Успешный ответ
+  /rooms/book:
+    post:
+      summary: Забронировать аудиторию
+      responses:
+        '200':
+          description: Успешно

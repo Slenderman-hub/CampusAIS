@@ -1,0 +1,12 @@
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
+
+Person(user, "Пользователь АИС", "Студент, преподаватель, диспетчер")
+System(campusAIS, "АИС Учебный кампус", "Просмотр расписания и бронирование аудиторий")
+System_Ext(scheduleSystem, "Система расписания", "Учебная часть")
+System_Ext(roomSystem, "Система аудиторного фонда", "Учёт и бронирование аудиторий")
+
+Rel(user, campusAIS, "Использует")
+Rel(campusAIS, scheduleSystem, "Получает расписание", "HTTPS")
+Rel(campusAIS, roomSystem, "Бронирует аудитории", "HTTPS")
+@enduml
