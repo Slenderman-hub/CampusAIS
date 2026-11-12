@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CampusAIS.Gateway.Booking\CampusAIS.Gateway.Booking.csproj" />
+    <ProjectReference Include="..\CampusAIS.Gateway.Integration\CampusAIS.Gateway.Integration.csproj" />
+    <ProjectReference Include="..\CampusAIS.Gateway.Security\CampusAIS.Gateway.Security.csproj" />
+    <ProjectReference Include="..\CampusAIS.Gateway.Sync\CampusAIS.Gateway.Sync.csproj" />
+    <ProjectReference Include="..\CampusAIS.Shared.Contracts\CampusAIS.Shared.Contracts.csproj" />
+  </ItemGroup>
+
+</Project>

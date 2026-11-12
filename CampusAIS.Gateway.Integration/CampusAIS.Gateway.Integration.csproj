@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CampusAIS.Gateway.Security\CampusAIS.Gateway.Security.csproj" />
+    <ProjectReference Include="..\CampusAIS.Shared.Contracts\CampusAIS.Shared.Contracts.csproj" />
+  </ItemGroup>
+
+</Project>

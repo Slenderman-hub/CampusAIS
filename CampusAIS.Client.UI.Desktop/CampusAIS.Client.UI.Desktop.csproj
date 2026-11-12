@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CampusAIS.Client.Core.BusinessLogic\CampusAIS.Client.Core.BusinessLogic.csproj" />
+    <ProjectReference Include="..\CampusAIS.Client.Data.ApiClient\CampusAIS.Client.Data.ApiClient.csproj" />
+    <ProjectReference Include="..\CampusAIS.Client.Security.Auth\CampusAIS.Client.Security.Auth.csproj" />
+    <ProjectReference Include="..\CampusAIS.Shared.Contracts\CampusAIS.Shared.Contracts.csproj" />
+  </ItemGroup>
+
+</Project>
